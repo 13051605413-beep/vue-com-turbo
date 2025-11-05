@@ -1,0 +1,40 @@
+{
+  "name": "@yza-fe/element-plus",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build && vue-tsc",
+    "build:css": "rspack build",
+    "dev": "rslib build --watch"
+  },
+  "devDependencies": {
+    "@rsbuild/plugin-less": "^1.5.0",
+    "@rslib/core": "^0.16.1",
+    "@rspack/cli": "^1.6.1",
+    "@rspack/core": "^1.6.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "less": "^4.4.2",
+    "rsbuild-plugin-unplugin-vue": "^0.1.0",
+    "sass-loader": "^16.0.6",
+    "typescript": "^5.9.3",
+    "unplugin-vue": "^7.0.4",
+    "vite": "^7.1.12",
+    "vue": "^3.5.22",
+    "vue-tsc": "^3.1.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "element-plus": "2.11.7"
+  }
+}

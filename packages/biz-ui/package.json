@@ -1,0 +1,33 @@
+{
+  "name": "biz-ui",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build && vue-tsc",
+    "dev": "rslib build --watch"
+  },
+  "devDependencies": {
+    "@rsbuild/plugin-less": "^1.5.0",
+    "@rslib/core": "^0.16.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "less": "^4.4.2",
+    "rsbuild-plugin-unplugin-vue": "^0.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vue": "^3.5.22",
+    "vue-tsc": "^3.1.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}

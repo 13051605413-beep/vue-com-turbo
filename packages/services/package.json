@@ -1,0 +1,39 @@
+{
+  "name": "yza-services",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "yapi": "yapiMagic",
+    "test": "rstest",
+    "build": "rslib build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rslib/core": "^0.14.0",
+    "@rstest/core": "^0.5.0",
+    "@types/node": "^22.15.3",
+    "typescript": "^5.9.2",
+    "yapi-to-typescript": "^3.38.0"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+    "yapi-magic": "^1.2.8"
+  }
+}
