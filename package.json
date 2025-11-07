@@ -4,8 +4,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "dev:ui": "turbo run dev --filter=biz-ui",
-    "story": "turbo run storybook --filter=./apps/storybook",
+    "dev:element-plus": "turbo run dev --filter=@yza-fe/element-plus",
+    "story": "turbo run storybook --filter=storybook",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",

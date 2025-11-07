@@ -9,12 +9,11 @@ export default defineConfig({
       format: 'cjs',
       bundle: true,
       syntax: 'es2021',
-      source: {
-        entry: {
-          'dist': './src/index.ts',
-          'index.css': './src/index.less', // CSS 作为独立入口
-        },
-      },
+      // source: {
+      //   entry: {
+      //     'dist': './src/index.ts',
+      //   },
+      // },
       output: {
         distPath: 'dist',
         cleanDistPath: true

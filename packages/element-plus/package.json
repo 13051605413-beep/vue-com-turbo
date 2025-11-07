@@ -3,18 +3,58 @@
   "version": "0.0.0",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs"
+    },
+    "./es/*.mjs": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.mjs"
+    },
+
+    "./es/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "import": "./es/*.mjs"
+    },
+    "./lib": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./lib/*.js": {
+      "types": "./lib/*.d.ts",
+      "require": "./lib/*.js"
+    },
+    "./lib/*": {
+      "types": [
+        "./lib/*.d.ts",
+        "./lib/*/index.d.ts"
+      ],
+      "require": "./lib/*.js"
+    },
+    "./*": "./*"
   },
-  "types": "./dist/index.d.ts",
+
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "style": "dist/index.css",
   "files": [
-    "dist"
+    "dist",
+    "es",
+    "lib"
   ],
   "scripts": {
     "build": "rslib build && vue-tsc",
     "build:css": "rspack build",
-    "dev": "rslib build --watch"
+    "watch:css": "rspack build --watch",
+    "dev": "rslib build --watch && rspack build --watch"
   },
   "devDependencies": {
     "@rsbuild/plugin-less": "^1.5.0",
@@ -24,6 +64,7 @@
     "@vitejs/plugin-vue": "^6.0.1",
     "less": "^4.4.2",
     "rsbuild-plugin-unplugin-vue": "^0.1.0",
+    "sass": "^1.93.3",
     "sass-loader": "^16.0.6",
     "typescript": "^5.9.3",
     "unplugin-vue": "^7.0.4",

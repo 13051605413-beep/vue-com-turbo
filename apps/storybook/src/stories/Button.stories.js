@@ -13,7 +13,7 @@ const meta = {
     backgroundColor: { control: 'color' },
   },
   args: {
-    primary: false,
+    type: String,
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     onClick: fn(),
   },
@@ -30,42 +30,35 @@ type Story = StoryObj<typeof meta>
  const Template = (args) => ({
   components: { ElButton },
   setup() {
-    return { args };
+    return {
+      args
+    };
   },
-  template: '<ElButton>xxx</ElButton>',
+  template: '<el-button :type="args.type">{{ args.label }}</el-button>',
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
+  type: "primary",
   label: 'Button',
 };
 
-// export const Primary: Story = {
-//   args: {
-//     primary: true,
-//     label: 'ElButton',
-//     child: 'xxx'
-//   },
-// }
+export const Success = Template.bind({});
+Success.args = {
+  type: "success",
+  label: 'Button',
+};
 
-export const Secondary: Story = {
+export const Error: Story = {
+  render: (args) => ({
+    components: { ElButton },
+    setup() {
+      return { args };
+    },
+    template: '<el-button :type="args.type">{{ args.label }}</el-button>',
+  }),
   args: {
-    primary: false,
-    label: 'ElButton',
+    type: "danger",
+    label: 'Button',
   },
-}
-
-export const Large: Story = {
-  args: {
-    label: 'ElButton',
-    size: 'large',
-  },
-}
-
-export const Small: Story = {
-  args: {
-    label: 'ElButton',
-    size: 'small',
-  },
-}
+};
